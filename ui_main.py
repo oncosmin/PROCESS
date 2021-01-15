@@ -2044,7 +2044,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_Widget.setCurrentIndex(5)
+        self.Pages_Widget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
