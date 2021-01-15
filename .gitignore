@@ -1,0 +1,13 @@
+
+# ignore results database
+*.db
+
+# ignore 2input_Parachute
+2input_Parachute/
+
+
+#ignore all result files
+*.pch
+*.f06
+*.xlsx
+*.txt
