@@ -2031,6 +2031,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.Version_Label)
 
+        self.SizeGrip_Frame = QFrame(self.Developed_Frame)
+        self.SizeGrip_Frame.setObjectName(u"SizeGrip_Frame")
+        self.SizeGrip_Frame.setMinimumSize(QSize(20, 0))
+        self.SizeGrip_Frame.setMaximumSize(QSize(20, 16777215))
+        self.SizeGrip_Frame.setFrameShape(QFrame.StyledPanel)
+        self.SizeGrip_Frame.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_3.addWidget(self.SizeGrip_Frame)
+
 
         self.verticalLayout_5.addWidget(self.Developed_Frame)
 
@@ -2044,7 +2053,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_Widget.setCurrentIndex(2)
+        self.Pages_Widget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
