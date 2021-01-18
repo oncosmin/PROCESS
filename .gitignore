@@ -1,9 +1,5 @@
-
-# ignore results database
-*.db
-
-# ignore 2input_Parachute
-2input_Parachute/
+# ignore folders
+__pycache__/
 
 
 #ignore all result files
@@ -11,3 +7,4 @@
 *.f06
 *.xlsx
 *.txt
+*.db
