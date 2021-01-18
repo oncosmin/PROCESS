@@ -796,7 +796,7 @@ QPushButton:pressed {
              <locale language="English" country="Kenya"/>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>4</number>
             </property>
             <widget class="QWidget" name="Home_Widget">
              <property name="minimumSize">
@@ -2176,7 +2176,7 @@ border-radius:10px;</string>
                      <widget class="QLabel" name="Comp_Facing_Label">
                       <property name="maximumSize">
                        <size>
-                        <width>300</width>
+                        <width>400</width>
                         <height>30</height>
                        </size>
                       </property>
@@ -2189,14 +2189,13 @@ border-radius:10px;</string>
                        </font>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">color: rgb(214, 214, 214);
-border:1px solid rgb(64, 71, 88);</string>
+                       <string notr="true">color: rgb(214, 214, 214);</string>
                       </property>
                       <property name="text">
                        <string>Composite Ply/Facing Material Input</string>
                       </property>
                       <property name="alignment">
-                       <set>Qt::AlignCenter</set>
+                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                       </property>
                       <property name="margin">
                        <number>0</number>
@@ -2654,7 +2653,7 @@ border-radius:10px;</string>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>300</width>
+                           <width>400</width>
                            <height>30</height>
                           </size>
                          </property>
@@ -2667,14 +2666,13 @@ border-radius:10px;</string>
                           </font>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">color: rgb(214, 214, 214);
-border:1px solid rgb(64, 71, 88);</string>
+                          <string notr="true">color: rgb(214, 214, 214);</string>
                          </property>
                          <property name="text">
                           <string>Composite Ply/Core Material Input</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -3260,7 +3258,7 @@ border-radius:10px;</string>
                          </property>
                          <property name="maximumSize">
                           <size>
-                           <width>200</width>
+                           <width>400</width>
                            <height>30</height>
                           </size>
                          </property>
@@ -3274,8 +3272,7 @@ border-radius:10px;</string>
                           </font>
                          </property>
                          <property name="styleSheet">
-                          <string notr="true">color: rgb(214, 214, 214);
-border:1px solid rgb(64, 71, 88);</string>
+                          <string notr="true">color: rgb(214, 214, 214);</string>
                          </property>
                          <property name="frameShape">
                           <enum>QFrame::NoFrame</enum>
@@ -3293,7 +3290,7 @@ border:1px solid rgb(64, 71, 88);</string>
                           <string>Metallic Material Input</string>
                          </property>
                          <property name="alignment">
-                          <set>Qt::AlignCenter</set>
+                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                          </property>
                          <property name="margin">
                           <number>0</number>
