@@ -45,6 +45,7 @@ class Style():
     QPushButton:pressed {
         background-color: rgb(239, 35, 60);;
         border-left: 28px solid rgb(239, 35, 60);
+        outline: none;
     }
     """
     )

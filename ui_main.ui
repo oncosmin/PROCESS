@@ -796,7 +796,7 @@ QPushButton:pressed {
              <locale language="English" country="Kenya"/>
             </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="Home_Widget">
              <property name="minimumSize">
