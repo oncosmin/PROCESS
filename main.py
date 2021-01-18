@@ -83,6 +83,22 @@ class MainWindow(QMainWindow):
         
         ## ==>> END        
 
+        ## BROWSE BUTTONS CLICKED
+        ########################################################################
+
+        # BROWSE PROCESS INPUT FILE
+        self.ui.Browse_Process_File_Btn.clicked.connect(lambda: UIFunctions.browseACTION(self, self.ui.Process_Input_LineEdit, 'PROCESS'))
+
+        # BROWSE BDF
+        self.ui.Browse_BDF_File_Btn.clicked.connect(lambda: UIFunctions.browseACTION(self, self.ui.BDF_Input_LineEdit, 'BDF'))
+
+        # BROWSE PCH
+        self.ui.Browse_PCH_File_Btn.clicked.connect(lambda: UIFunctions.browseACTION(self, self.ui.PCH_Input_LineEdit, 'PCH'))
+        
+        # BROWSE F06.
+        self.ui.Browse_F06_File_Btn.clicked.connect(lambda: UIFunctions.browseACTION(self, self.ui.F06_Input_LineEdit, 'F06'))
+
+        ## ==>> END
 
     ########################################################################
     ## APP EVENTS

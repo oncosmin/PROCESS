@@ -115,18 +115,13 @@ class UIFunctions(MainWindow):
             
             # ADD TEXT TO BUTTONS
             if widthExtend == maxExtend:
-                self.ui.Btn_Home_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/cil-home.png)"))
-                self.ui.Btn_Home_Menu.setText('Home')
-                self.ui.Btn_OpenFiles_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/cil-folder-open.png)"))
-                self.ui.Btn_OpenFiles_Menu.setText('Open Files')
-                self.ui.Btn_GroupElm_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/mesh.png)"))
-                self.ui.Btn_GroupElm_Menu.setText('Group Elements')
-                self.ui.Btn_Composite_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/composite.png)"))
-                self.ui.Btn_Composite_Menu.setText('Composite Materials')
-                self.ui.Btn_Metallic_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/cil-settings.png)"))
-                self.ui.Btn_Metallic_Menu.setText('Metallic Materials')
-                self.ui.Btn_Run_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/cil-media-play.png)"))
-                self.ui.Btn_Run_Menu.setText('Run Analysis')
+                UIFunctions.toggleClick(self, self.ui.Btn_Home_Menu, "url(:/24x24/icons/24x24/cil-home.png)", 'Home')
+                UIFunctions.toggleClick(self, self.ui.Btn_OpenFiles_Menu, "url(:/24x24/icons/24x24/cil-folder-open.png)", 'Open Files')
+                UIFunctions.toggleClick(self, self.ui.Btn_GroupElm_Menu, "url(:/24x24/icons/24x24/mesh.png)", 'Group Elements')
+                UIFunctions.toggleClick(self, self.ui.Btn_Composite_Menu, "url(:/24x24/icons/24x24/composite.png)", 'Composite Materials')
+                UIFunctions.toggleClick(self, self.ui.Btn_Metallic_Menu, "url(:/24x24/icons/24x24/cil-settings.png)", 'Metallic Materials')
+                UIFunctions.toggleClick(self, self.ui.Btn_Run_Menu, "url(:/24x24/icons/24x24/cil-media-play.png)", 'Run Analysis')
+                
             else:
                 self.ui.Btn_Home_Menu.setText('')
                 self.ui.Btn_OpenFiles_Menu.setText('')
@@ -134,7 +129,18 @@ class UIFunctions(MainWindow):
                 self.ui.Btn_Composite_Menu.setText('')
                 self.ui.Btn_Metallic_Menu.setText('')
                 self.ui.Btn_Run_Menu.setText('')
-                
-
     
+    # FUNCTION TO UPDATE BUTTON WHEN EXPANDED
+    def toggleClick(self, buttonUpdate, icon, nameUpdate):
+        buttonUpdate.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', icon))
+        buttonUpdate.setText(nameUpdate)
+         
+    ########################################
+    # BROWSE FUNCTIONS
+    ########################################
     
+    def browseACTION(self,lineEditName,fileName):
+        fileName, _ = QtWidgets.QFileDialog.getOpenFileName(None, "Select "+ fileName +" file", "", fileName+" Files (*."+fileName.lower()+")")
+        if fileName:
+            lineEditName.clear()
+            lineEditName.setText(fileName)
