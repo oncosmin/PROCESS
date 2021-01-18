@@ -59,31 +59,29 @@ class MainWindow(QMainWindow):
         
         # PAGE 1 = HOME
         self.ui.Btn_Home_Menu.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.Home_Widget))
-        
+        self.ui.Btn_Home_Menu.clicked.connect(lambda: UIFunctions.labelPage(self,'Home'))
+
         # PAGE 2 = OPEN FILES
         self.ui.Btn_OpenFiles_Menu.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.OpenFile_Widget))
-        
+        self.ui.Btn_OpenFiles_Menu.clicked.connect(lambda: UIFunctions.labelPage(self,'Open Files'))
+
         # PAGE 3 = GROUP ELEMENTS
         self.ui.Btn_GroupElm_Menu.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.GroupElm_Widget))
+        self.ui.Btn_GroupElm_Menu.clicked.connect(lambda: UIFunctions.labelPage(self,'Group Elements'))
         
         # PAGE 4 = COMPOSITE MATERIALS
         self.ui.Btn_Composite_Menu.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.Composite_Widget))
+        self.ui.Btn_Composite_Menu.clicked.connect(lambda: UIFunctions.labelPage(self,'Composite Materials'))
         
         # PAGE 5 = METALLIC MATERIALS
         self.ui.Btn_Metallic_Menu.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.Metallic_Widget))
+        self.ui.Btn_Metallic_Menu.clicked.connect(lambda: UIFunctions.labelPage(self,'Metallic Materials'))
         
         # PAGE 6 = RUN
         self.ui.Btn_Run_Menu.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.Run_Widget))
+        self.ui.Btn_Run_Menu.clicked.connect(lambda: UIFunctions.labelPage(self,'Run Analysis'))
+        
         ## ==>> END        
-
-
-        ## ADD CUSTOM MENUS
-        ########################################################################
-        self.ui.Pages_Widget.setMinimumWidth(20)
-        UIFunctions.addNewMenu(self, "HOME", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)")
-        UIFunctions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)")
-        UIFunctions.addNewMenu(self, "Custom Widgets", "btn_widgets", "url(:/16x16/icons/16x16/cil-equalizer.png)")
-        ## ==> END ##
 
 
     ########################################################################
@@ -92,37 +90,6 @@ class MainWindow(QMainWindow):
     def mousePressEvent(self,event):
         self.dragPos = event.globalPos()
     
-
-    ########################################################################
-    ## MENUS ==> DYNAMIC MENUS FUNCTIONS
-    ########################################################################
-    def Button(self):
-        # GET BT CLICKED
-        btnWidget = self.sender()
-
-        # PAGE HOME
-        if btnWidget.objectName() == "Btn_Home":
-            self.ui.Pages_Widget.setCurrentWidget(self.ui.page_home)
-            UIFunctions.resetStyle(self, "Btn_Home")
-            UIFunctions.labelPage(self, "Home")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
-
-        # PAGE NEW USER
-        if btnWidget.objectName() == "btn_new_user":
-            self.ui.Pages_Widget.setCurrentWidget(self.ui.page_home)
-            UIFunctions.resetStyle(self, "btn_new_user")
-            UIFunctions.labelPage(self, "New User")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
-
-        # PAGE WIDGETS
-        if btnWidget.objectName() == "btn_widgets":
-            self.ui.Pages_Widget.setCurrentWidget(self.ui.page_widgets)
-            UIFunctions.resetStyle(self, "btn_widgets")
-            UIFunctions.labelPage(self, "Custom Widgets")
-            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
-
-    ## ==> END ##
-                   
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

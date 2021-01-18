@@ -81,7 +81,11 @@ class UIFunctions(MainWindow):
     def returnStatus():
         return GLOBAL_STATE
     
-    
+    ## CHANGE PAGE LABEL TEXT
+    def labelPage(self, text):
+        newText = '| ' + text.upper()
+        self.ui.label.setText(newText)
+              
     ########################################
     # TOGGLE MENU ANIMATION
     ########################################
@@ -103,32 +107,34 @@ class UIFunctions(MainWindow):
             
             # ANIMATION
             self.animation = QPropertyAnimation(self.ui.Menu_Left_Frame, b"minimumWidth")
-            self.animation.setDuration(400)
+            self.animation.setDuration(300)
             self.animation.setStartValue(width)
             self.animation.setEndValue(widthExtend)
             self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
             self.animation.start()
-    
-    ########################################        
-    # DYNAMIC MENUS
-    ########################################
-    def addNewMenu(self, name, objName, icon):
-        font = QFont()
-        font.setFamily(u"Segoe UI")
-        button = QPushButton(str(count),self)
-        button.setObjectName(objName)
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(button.sizePolicy().hasHeightForWidth())
-        button.setSizePolicy(sizePolicy3)
-        button.setMinimumSize(QSize(0, 80))
-        button.setLayoutDirection(Qt.LeftToRight)
-        button.setFont(font)
-        button.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', icon))
-        button.setText(name)
-        button.setToolTip(name)
-        button.clicked.connect(self.Button)
+            
+            # ADD TEXT TO BUTTONS
+            if widthExtend == maxExtend:
+                self.ui.Btn_Home_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/cil-home.png)"))
+                self.ui.Btn_Home_Menu.setText('Home')
+                self.ui.Btn_OpenFiles_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/cil-folder-open.png)"))
+                self.ui.Btn_OpenFiles_Menu.setText('Open Files')
+                self.ui.Btn_GroupElm_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/mesh.png)"))
+                self.ui.Btn_GroupElm_Menu.setText('Group Elements')
+                self.ui.Btn_Composite_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/composite.png)"))
+                self.ui.Btn_Composite_Menu.setText('Composite Materials')
+                self.ui.Btn_Metallic_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/cil-settings.png)"))
+                self.ui.Btn_Metallic_Menu.setText('Metallic Materials')
+                self.ui.Btn_Run_Menu.setStyleSheet(Style.style_bt_standard.replace('ICON_REPLACE', "url(:/24x24/icons/24x24/cil-media-play.png)"))
+                self.ui.Btn_Run_Menu.setText('Run Analysis')
+            else:
+                self.ui.Btn_Home_Menu.setText('')
+                self.ui.Btn_OpenFiles_Menu.setText('')
+                self.ui.Btn_GroupElm_Menu.setText('')
+                self.ui.Btn_Composite_Menu.setText('')
+                self.ui.Btn_Metallic_Menu.setText('')
+                self.ui.Btn_Run_Menu.setText('')
+                
 
-        self.ui.Pages_Widget.addWidget(button)
-   
+    
+    
