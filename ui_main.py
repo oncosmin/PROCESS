@@ -11,6 +11,7 @@
 from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
+from ui_styles import Style
 
 import files_rc
 
@@ -983,68 +984,25 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        
+        ## GROUP ELMEMENTS TABLE WIDGET DEFINTION
+        ##################################################################
+        
         self.GroupElm_TableWidget = QTableWidget(self.GroupElm_Table_Frem)
         self.GroupElm_TableWidget.setObjectName(u"GroupElm_TableWidget")
-        self.GroupElm_TableWidget.setStyleSheet(u"QTableWidget {	\n"
-"	background-color: rgb(40, 42, 62);\n"
-"	padding: 10px;\n"
-"	border-radius: 5px;\n"
-"	gridline-color: rgb(44, 49, 60);\n"
-"	border-bottom: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-"QTableWidget::item{\n"
-"	border-color: rgb(44, 49, 60);\n"
-"	padding-left: 5px;\n"
-"	padding-right: 5px;\n"
-"	gridline-color: rgb(44, 49, 60);\n"
-"}\n"
-"QTableWidget::item:selected{\n"
-"	background-color: rgb(141, 153, 174);\n"
-"}\n"
-"QScrollBar:horizontal {\n"
-"    border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    height: 14px;\n"
-"    margin: 0px 21px 0 21px;\n"
-"	border-radius: 0px;\n"
-"}\n"
-" QScrollBar:vertical {\n"
-"	border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    width: 14px;\n"
-"    margin: 21px 0 21px 0;\n"
-"	border-radius: 0px;\n"
-" }\n"
-"QHeaderView::section{\n"
-"	Background-color: rgb(39, 44, 54);\n"
-"	max-width: 30px;\n"
-"	border: 1px solid rgb(44, 49, 60);\n"
-"	border-style: none;\n"
-"    border-bottom: 1px solid rgb(44, 49, 60);\n"
-"    border-right: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-"QT"
-                        "ableView::horizontalHeader {	\n"
-"	background-color: rgb(239, 35, 60);\n"
-"}\n"
-"QHeaderView::section:horizontal\n"
-"{\n"
-"    border: 1px solid rgb(32, 34, 42);\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	padding: 3px;\n"
-"	border-top-left-radius: 7px;\n"
-"    border-top-right-radius: 7px;\n"
-"}\n"
-"QHeaderView::section:vertical\n"
-"{\n"
-"    border: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-"")
-
+        self.GroupElm_TableWidget.setStyleSheet(Style.style_table_standard)
+        self.GroupElm_TableWidget.setFrameShape(QFrame.NoFrame)
+        self.GroupElm_TableWidget.horizontalHeader().setVisible(True)
+        self.GroupElm_TableWidget.horizontalHeader().setHighlightSections(True)
+        self.GroupElm_TableWidget.verticalHeader().setVisible(False)
+        self.GroupElm_TableWidget.setFocusPolicy(Qt.NoFocus)
+        self.GroupElm_TableWidget.horizontalHeader().setStretchLastSection(True)
+           
         self.verticalLayout_15.addWidget(self.GroupElm_TableWidget)
-
-
         self.verticalLayout_13.addWidget(self.GroupElm_Table_Frem)
+       
+        ##################################################################
+        ## END TABLE DEFINITION
 
         self.Pages_Widget.addWidget(self.GroupElm_Widget)
         self.Composite_Widget = QWidget()
@@ -1286,7 +1244,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.Material_Facing_TableWidget.setFrameShape(QFrame.NoFrame)
-        self.Material_Facing_TableWidget.setFrameShadow(QFrame.Plain)
+        self.Material_Facing_TableWidget.horizontalHeader().setVisible(False)
+        self.Material_Facing_TableWidget.horizontalHeader().setHighlightSections(True)
+        self.Material_Facing_TableWidget.verticalHeader().setVisible(False)
 
         self.horizontalLayout_17.addWidget(self.Material_Facing_TableWidget)
 
@@ -1558,6 +1518,9 @@ class Ui_MainWindow(object):
         self.CompCore_TableWidget = QTableWidget(self.Comp_Core_Table_Frame)
         self.CompCore_TableWidget.setObjectName(u"CompCore_TableWidget")
         self.CompCore_TableWidget.setFrameShape(QFrame.NoFrame)
+        self.CompCore_TableWidget.horizontalHeader().setVisible(False)
+        self.CompCore_TableWidget.horizontalHeader().setHighlightSections(True)
+        self.CompCore_TableWidget.verticalHeader().setVisible(False)
 
         self.horizontalLayout_26.addWidget(self.CompCore_TableWidget)
 
@@ -1827,7 +1790,6 @@ class Ui_MainWindow(object):
         self.Metallic_TableWidget = QTableWidget(self.Metallic_Table_Frame)
         self.Metallic_TableWidget.setObjectName(u"Metallic_TableWidget")
         self.Metallic_TableWidget.setFrameShape(QFrame.NoFrame)
-        self.Metallic_TableWidget.setFrameShadow(QFrame.Plain)
         self.Metallic_TableWidget.horizontalHeader().setVisible(False)
         self.Metallic_TableWidget.horizontalHeader().setHighlightSections(True)
         self.Metallic_TableWidget.verticalHeader().setVisible(False)
