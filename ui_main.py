@@ -50,6 +50,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.Btn_Toggle = QPushButton(self.Toggle_Frame)
         self.Btn_Toggle.setObjectName(u"Btn_Toggle")
+        self.Btn_Toggle.setFocusPolicy(Qt.NoFocus)
         sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -143,6 +144,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.Btn_Minimize = QPushButton(self.Window_Btns_Frame)
         self.Btn_Minimize.setObjectName(u"Btn_Minimize")
+        self.Btn_Minimize.setFocusPolicy(Qt.NoFocus)
         self.Btn_Minimize.setMinimumSize(QSize(40, 0))
         self.Btn_Minimize.setMaximumSize(QSize(40, 16777215))
         self.Btn_Minimize.setStyleSheet(u"QPushButton {\n"
@@ -166,6 +168,7 @@ class Ui_MainWindow(object):
 
         self.Btn_Maximize = QPushButton(self.Window_Btns_Frame)
         self.Btn_Maximize.setObjectName(u"Btn_Maximize")
+        self.Btn_Maximize.setFocusPolicy(Qt.NoFocus)
         self.Btn_Maximize.setStyleSheet(u"QPushButton {\n"
 "	background-position: center;\n"
 "	background-repeat: no-reperat;\n"
@@ -187,6 +190,7 @@ class Ui_MainWindow(object):
 
         self.Btn_Close = QPushButton(self.Window_Btns_Frame)
         self.Btn_Close.setObjectName(u"Btn_Close")
+        self.Btn_Close.setFocusPolicy(Qt.NoFocus)
         self.Btn_Close.setStyleSheet(u"QPushButton {\n"
 "	background-position: center;\n"
 "	background-repeat: no-reperat;\n"
@@ -268,6 +272,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.Btn_Home_Menu = QPushButton(self.Top_Menus_Frame)
         self.Btn_Home_Menu.setObjectName(u"Btn_Home_Menu")
+        self.Btn_Home_Menu.setFocusPolicy(Qt.NoFocus)
         self.Btn_Home_Menu.setMinimumSize(QSize(0, 70))
         self.Btn_Home_Menu.setStyleSheet(u"QPushButton {\n"
 "	background-image: url(:/24x24/icons/24x24/cil-home.png);\n"
@@ -287,6 +292,7 @@ class Ui_MainWindow(object):
 
         self.Btn_OpenFiles_Menu = QPushButton(self.Top_Menus_Frame)
         self.Btn_OpenFiles_Menu.setObjectName(u"Btn_OpenFiles_Menu")
+        self.Btn_OpenFiles_Menu.setFocusPolicy(Qt.NoFocus)
         self.Btn_OpenFiles_Menu.setMinimumSize(QSize(0, 70))
         self.Btn_OpenFiles_Menu.setStyleSheet(u"QPushButton {\n"
 "	background-image: url(:/24x24/icons/24x24/cil-folder-open.png);\n"
@@ -306,6 +312,7 @@ class Ui_MainWindow(object):
 
         self.Btn_GroupElm_Menu = QPushButton(self.Top_Menus_Frame)
         self.Btn_GroupElm_Menu.setObjectName(u"Btn_GroupElm_Menu")
+        self.Btn_GroupElm_Menu.setFocusPolicy(Qt.NoFocus)
         self.Btn_GroupElm_Menu.setMinimumSize(QSize(0, 70))
         self.Btn_GroupElm_Menu.setStyleSheet(u"QPushButton {\n"
 "	background-image: url(:/24x24/icons/24x24/mesh.png);\n"
@@ -325,6 +332,7 @@ class Ui_MainWindow(object):
 
         self.Btn_Composite_Menu = QPushButton(self.Top_Menus_Frame)
         self.Btn_Composite_Menu.setObjectName(u"Btn_Composite_Menu")
+        self.Btn_Composite_Menu.setFocusPolicy(Qt.NoFocus)
         self.Btn_Composite_Menu.setMinimumSize(QSize(0, 70))
         self.Btn_Composite_Menu.setStyleSheet(u"QPushButton {\n"
 "	\n"
@@ -345,6 +353,7 @@ class Ui_MainWindow(object):
 
         self.Btn_Metallic_Menu = QPushButton(self.Top_Menus_Frame)
         self.Btn_Metallic_Menu.setObjectName(u"Btn_Metallic_Menu")
+        self.Btn_Metallic_Menu.setFocusPolicy(Qt.NoFocus)
         self.Btn_Metallic_Menu.setMinimumSize(QSize(0, 70))
         self.Btn_Metallic_Menu.setStyleSheet(u"QPushButton {\n"
 "	background-image: url(:/24x24/icons/24x24/cil-settings.png);\n"
@@ -364,6 +373,7 @@ class Ui_MainWindow(object):
 
         self.Btn_Run_Menu = QPushButton(self.Top_Menus_Frame)
         self.Btn_Run_Menu.setObjectName(u"Btn_Run_Menu")
+        self.Btn_Run_Menu.setFocusPolicy(Qt.NoFocus)
         self.Btn_Run_Menu.setMinimumSize(QSize(0, 70))
         self.Btn_Run_Menu.setStyleSheet(u"QPushButton {\n"
 "	background-image: url(:/24x24/icons/24x24/cil-media-play.png);\n"
@@ -537,6 +547,7 @@ class Ui_MainWindow(object):
 
         self.Browse_Process_File_Btn = QPushButton(self.Process_Input_Btn_Frame)
         self.Browse_Process_File_Btn.setObjectName(u"Browse_Process_File_Btn")
+        self.Browse_Process_File_Btn.setFocusPolicy(Qt.NoFocus)
         self.Browse_Process_File_Btn.setMinimumSize(QSize(200, 0))
         self.Browse_Process_File_Btn.setMaximumSize(QSize(80, 30))
         self.Browse_Process_File_Btn.setFont(font5)
@@ -573,6 +584,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12.setContentsMargins(5, 0, 5, 0)
         self.Add_Input_File_Btn = QPushButton(self.Add_Input_File_Frame)
         self.Add_Input_File_Btn.setObjectName(u"Add_Input_File_Btn")
+        self.Add_Input_File_Btn.setFocusPolicy(Qt.NoFocus)
         self.Add_Input_File_Btn.setMinimumSize(QSize(100, 20))
         self.Add_Input_File_Btn.setMaximumSize(QSize(100, 30))
         self.Add_Input_File_Btn.setFont(font5)
@@ -661,6 +673,7 @@ class Ui_MainWindow(object):
 
         self.Browse_BDF_File_Btn = QPushButton(self.BDF_Btns_Frame)
         self.Browse_BDF_File_Btn.setObjectName(u"Browse_BDF_File_Btn")
+        self.Browse_BDF_File_Btn.setFocusPolicy(Qt.NoFocus)
         self.Browse_BDF_File_Btn.setMinimumSize(QSize(200, 0))
         self.Browse_BDF_File_Btn.setMaximumSize(QSize(80, 30))
         self.Browse_BDF_File_Btn.setFont(font5)
@@ -715,6 +728,7 @@ class Ui_MainWindow(object):
 
         self.Browse_F06_File_Btn = QPushButton(self.F06_Btns_Frame)
         self.Browse_F06_File_Btn.setObjectName(u"Browse_F06_File_Btn")
+        self.Browse_F06_File_Btn.setFocusPolicy(Qt.NoFocus)
         self.Browse_F06_File_Btn.setMinimumSize(QSize(200, 0))
         self.Browse_F06_File_Btn.setMaximumSize(QSize(80, 30))
         self.Browse_F06_File_Btn.setFont(font5)
@@ -770,6 +784,7 @@ class Ui_MainWindow(object):
 
         self.Browse_PCH_File_Btn = QPushButton(self.PCH_Btns_Frame)
         self.Browse_PCH_File_Btn.setObjectName(u"Browse_PCH_File_Btn")
+        self.Browse_PCH_File_Btn.setFocusPolicy(Qt.NoFocus)
         self.Browse_PCH_File_Btn.setMinimumSize(QSize(200, 30))
         self.Browse_PCH_File_Btn.setMaximumSize(QSize(80, 30))
         self.Browse_PCH_File_Btn.setFont(font5)
@@ -909,6 +924,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15.setContentsMargins(200, 0, 200, 0)
         self.AddGroup_Btn = QPushButton(self.Add_Btns_Frame)
         self.AddGroup_Btn.setObjectName(u"AddGroup_Btn")
+        self.AddGroup_Btn.setFocusPolicy(Qt.NoFocus)
         self.AddGroup_Btn.setMinimumSize(QSize(100, 30))
         self.AddGroup_Btn.setMaximumSize(QSize(100, 30))
         self.AddGroup_Btn.setFont(font5)
@@ -930,6 +946,7 @@ class Ui_MainWindow(object):
 
         self.DelGroup_Btn = QPushButton(self.Add_Btns_Frame)
         self.DelGroup_Btn.setObjectName(u"DelGroup_Btn")
+        self.DelGroup_Btn.setFocusPolicy(Qt.NoFocus)
         self.DelGroup_Btn.setMinimumSize(QSize(100, 30))
         self.DelGroup_Btn.setMaximumSize(QSize(100, 30))
         self.DelGroup_Btn.setFont(font5)
@@ -1114,6 +1131,7 @@ class Ui_MainWindow(object):
 
         self.CompFacing_Add_Btn = QPushButton(self.Comp_Facing_MatID_Frame)
         self.CompFacing_Add_Btn.setObjectName(u"CompFacing_Add_Btn")
+        self.CompFacing_Add_Btn.setFocusPolicy(Qt.NoFocus)
         self.CompFacing_Add_Btn.setMinimumSize(QSize(100, 30))
         self.CompFacing_Add_Btn.setMaximumSize(QSize(100, 30))
         self.CompFacing_Add_Btn.setStyleSheet(u"QPushButton {\n"
@@ -1176,6 +1194,7 @@ class Ui_MainWindow(object):
 
         self.CompFacing_Del_Btn = QPushButton(self.Comp_Facing_FOSu_Frame)
         self.CompFacing_Del_Btn.setObjectName(u"CompFacing_Del_Btn")
+        self.CompFacing_Del_Btn.setFocusPolicy(Qt.NoFocus)
         self.CompFacing_Del_Btn.setMinimumSize(QSize(100, 30))
         self.CompFacing_Del_Btn.setMaximumSize(QSize(100, 30))
         self.CompFacing_Del_Btn.setStyleSheet(u"QPushButton {\n"
@@ -1482,6 +1501,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_25.setContentsMargins(30, -1, 30, -1)
         self.CompCore_Add_Btn = QPushButton(self.Comp_Core_Btns_Frame)
         self.CompCore_Add_Btn.setObjectName(u"CompCore_Add_Btn")
+        self.CompCore_Add_Btn.setFocusPolicy(Qt.NoFocus)
         self.CompCore_Add_Btn.setMinimumSize(QSize(100, 30))
         self.CompCore_Add_Btn.setMaximumSize(QSize(100, 30))
         self.CompCore_Add_Btn.setStyleSheet(u"QPushButton {\n"
@@ -1502,6 +1522,7 @@ class Ui_MainWindow(object):
 
         self.CompCore_Del_Btn = QPushButton(self.Comp_Core_Btns_Frame)
         self.CompCore_Del_Btn.setObjectName(u"CompCore_Del_Btn")
+        self.CompCore_Del_Btn.setFocusPolicy(Qt.NoFocus)
         self.CompCore_Del_Btn.setMinimumSize(QSize(100, 30))
         self.CompCore_Del_Btn.setMaximumSize(QSize(100, 30))
         self.CompCore_Del_Btn.setStyleSheet(u"QPushButton {\n"
@@ -1744,6 +1765,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
         self.Metallic_Add_Btn = QPushButton(self.Metallic_Btns_Frame)
         self.Metallic_Add_Btn.setObjectName(u"Metallic_Add_Btn")
+        self.Metallic_Add_Btn.setFocusPolicy(Qt.NoFocus)
         self.Metallic_Add_Btn.setMinimumSize(QSize(100, 30))
         self.Metallic_Add_Btn.setFont(font5)
         self.Metallic_Add_Btn.setStyleSheet(u"QPushButton {\n"
@@ -1764,6 +1786,7 @@ class Ui_MainWindow(object):
 
         self.Metallic_Del_Btn = QPushButton(self.Metallic_Btns_Frame)
         self.Metallic_Del_Btn.setObjectName(u"Metallic_Del_Btn")
+        self.Metallic_Del_Btn.setFocusPolicy(Qt.NoFocus)
         self.Metallic_Del_Btn.setMinimumSize(QSize(100, 30))
         self.Metallic_Del_Btn.setFont(font5)
         self.Metallic_Del_Btn.setStyleSheet(u"QPushButton {\n"
@@ -1867,6 +1890,7 @@ class Ui_MainWindow(object):
 
         self.Save_Input_File_Btn = QPushButton(self.Save_Input_File_Frame)
         self.Save_Input_File_Btn.setObjectName(u"Save_Input_File_Btn")
+        self.Save_Input_File_Btn.setFocusPolicy(Qt.NoFocus)
         self.Save_Input_File_Btn.setMinimumSize(QSize(100, 30))
         self.Save_Input_File_Btn.setMaximumSize(QSize(100, 30))
         self.Save_Input_File_Btn.setFont(font5)
@@ -1931,6 +1955,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_33.setContentsMargins(10, 10, 10, 10)
         self.Run_Analysis_Btn = QPushButton(self.Run_Btns_Frame)
         self.Run_Analysis_Btn.setObjectName(u"Run_Analysis_Btn")
+        self.Run_Analysis_Btn.setFocusPolicy(Qt.NoFocus)
         self.Run_Analysis_Btn.setMinimumSize(QSize(100, 30))
         self.Run_Analysis_Btn.setMaximumSize(QSize(150, 40))
         self.Run_Analysis_Btn.setFont(font)

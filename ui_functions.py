@@ -83,7 +83,7 @@ class UIFunctions(MainWindow):
     
     ## CHANGE PAGE LABEL TEXT
     def labelPage(self, text):
-        newText = '| ' + text.upper()
+        newText = '| ' + text.upper() + '  '
         self.ui.label.setText(newText)
               
     ########################################

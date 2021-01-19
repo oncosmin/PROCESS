@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
+                
         # MOVE WINDOW
         def moveWindow(event):
         
