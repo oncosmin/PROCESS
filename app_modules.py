@@ -12,8 +12,8 @@
 # GUI FILE
 from ui_main import Ui_MainWindow
 
-# IMPORT QSS CUSTOM 
-# Import button style for toggle menu
+# IMPORT STYLESHEETS CUSTOM 
+# Import Style for Menu Button and Tables
 from ui_styles import Style
 
 # IMPORT UI FUNCTIONS
