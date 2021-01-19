@@ -2075,7 +2075,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.Pages_Widget.setCurrentIndex(1)
+        # CURRENT WIDGET PAGE THAT SHOWS WHEN OPENING APP
+        self.Pages_Widget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
