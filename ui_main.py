@@ -983,22 +983,22 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.GroupElm_TableView = QTableView(self.GroupElm_Table_Frem)
-        self.GroupElm_TableView.setObjectName(u"GroupElm_TableView")
-        self.GroupElm_TableView.setStyleSheet(u"QTableView {	\n"
+        self.GroupElm_TableWidget = QTableWidget(self.GroupElm_Table_Frem)
+        self.GroupElm_TableWidget.setObjectName(u"GroupElm_TableWidget")
+        self.GroupElm_TableWidget.setStyleSheet(u"QTableWidget {	\n"
 "	background-color: rgb(40, 42, 62);\n"
 "	padding: 10px;\n"
 "	border-radius: 5px;\n"
 "	gridline-color: rgb(44, 49, 60);\n"
 "	border-bottom: 1px solid rgb(44, 49, 60);\n"
 "}\n"
-"QTableView::item{\n"
+"QTableWidget::item{\n"
 "	border-color: rgb(44, 49, 60);\n"
 "	padding-left: 5px;\n"
 "	padding-right: 5px;\n"
 "	gridline-color: rgb(44, 49, 60);\n"
 "}\n"
-"QTableView::item:selected{\n"
+"QTableWidget::item:selected{\n"
 "	background-color: rgb(141, 153, 174);\n"
 "}\n"
 "QScrollBar:horizontal {\n"
@@ -1041,7 +1041,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
 
-        self.verticalLayout_15.addWidget(self.GroupElm_TableView)
+        self.verticalLayout_15.addWidget(self.GroupElm_TableWidget)
 
 
         self.verticalLayout_13.addWidget(self.GroupElm_Table_Frem)
@@ -1228,22 +1228,22 @@ class Ui_MainWindow(object):
         self.horizontalLayout_17.setSpacing(0)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.horizontalLayout_17.setContentsMargins(10, 10, 10, 10)
-        self.Material_Facing_TableView = QTableView(self.Material_Facing_Table_Frame)
-        self.Material_Facing_TableView.setObjectName(u"Material_Facing_TableView")
-        self.Material_Facing_TableView.setStyleSheet(u"QTableView {	\n"
+        self.Material_Facing_TableWidget = QTableWidget(self.Material_Facing_Table_Frame)
+        self.Material_Facing_TableWidget.setObjectName(u"Material_Facing_TableWidget")
+        self.Material_Facing_TableWidget.setStyleSheet(u"QTableWidget {	\n"
 "	background-color: rgb(40, 42, 62);\n"
 "	padding: 10px;\n"
 "	border-radius: 5px;\n"
 "	gridline-color: rgb(44, 49, 60);\n"
 "	border-bottom: 1px solid rgb(44, 49, 60);\n"
 "}\n"
-"QTableView::item{\n"
+"QTableWidget::item{\n"
 "	border-color: rgb(44, 49, 60);\n"
 "	padding-left: 5px;\n"
 "	padding-right: 5px;\n"
 "	gridline-color: rgb(44, 49, 60);\n"
 "}\n"
-"QTableView::item:selected{\n"
+"QTableWidget::item:selected{\n"
 "	background-color: rgb(141, 153, 174);\n"
 "}\n"
 "QScrollBar:horizontal {\n"
@@ -1285,10 +1285,10 @@ class Ui_MainWindow(object):
 "    border: 1px solid rgb(44, 49, 60);\n"
 "}\n"
 "")
-        self.Material_Facing_TableView.setFrameShape(QFrame.NoFrame)
-        self.Material_Facing_TableView.setFrameShadow(QFrame.Plain)
+        self.Material_Facing_TableWidget.setFrameShape(QFrame.NoFrame)
+        self.Material_Facing_TableWidget.setFrameShadow(QFrame.Plain)
 
-        self.horizontalLayout_17.addWidget(self.Material_Facing_TableView)
+        self.horizontalLayout_17.addWidget(self.Material_Facing_TableWidget)
 
 
         self.horizontalLayout_16.addWidget(self.Material_Facing_Table_Frame)
@@ -1555,11 +1555,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.setSpacing(10)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
         self.horizontalLayout_26.setContentsMargins(10, 10, 10, 10)
-        self.CompCore_TableView = QTableView(self.Comp_Core_Table_Frame)
-        self.CompCore_TableView.setObjectName(u"CompCore_TableView")
-        self.CompCore_TableView.setFrameShape(QFrame.NoFrame)
+        self.CompCore_TableWidget = QTableWidget(self.Comp_Core_Table_Frame)
+        self.CompCore_TableWidget.setObjectName(u"CompCore_TableWidget")
+        self.CompCore_TableWidget.setFrameShape(QFrame.NoFrame)
 
-        self.horizontalLayout_26.addWidget(self.CompCore_TableView)
+        self.horizontalLayout_26.addWidget(self.CompCore_TableWidget)
 
 
         self.horizontalLayout_20.addWidget(self.Comp_Core_Table_Frame)
@@ -1824,15 +1824,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
-        self.Metallic_TableView = QTableView(self.Metallic_Table_Frame)
-        self.Metallic_TableView.setObjectName(u"Metallic_TableView")
-        self.Metallic_TableView.setFrameShape(QFrame.NoFrame)
-        self.Metallic_TableView.setFrameShadow(QFrame.Plain)
-        self.Metallic_TableView.horizontalHeader().setVisible(False)
-        self.Metallic_TableView.horizontalHeader().setHighlightSections(True)
-        self.Metallic_TableView.verticalHeader().setVisible(False)
+        self.Metallic_TableWidget = QTableWidget(self.Metallic_Table_Frame)
+        self.Metallic_TableWidget.setObjectName(u"Metallic_TableWidget")
+        self.Metallic_TableWidget.setFrameShape(QFrame.NoFrame)
+        self.Metallic_TableWidget.setFrameShadow(QFrame.Plain)
+        self.Metallic_TableWidget.horizontalHeader().setVisible(False)
+        self.Metallic_TableWidget.horizontalHeader().setHighlightSections(True)
+        self.Metallic_TableWidget.verticalHeader().setVisible(False)
 
-        self.verticalLayout_23.addWidget(self.Metallic_TableView)
+        self.verticalLayout_23.addWidget(self.Metallic_TableWidget)
 
 
         self.verticalLayout_20.addWidget(self.Metallic_Table_Frame)
