@@ -1732,13 +1732,13 @@ border-radius:10px;
                       <property name="minimumSize">
                        <size>
                         <width>150</width>
-                        <height>0</height>
+                        <height>30</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
                         <width>150</width>
-                        <height>16777215</height>
+                        <height>30</height>
                        </size>
                       </property>
                       <property name="font">
@@ -1823,13 +1823,13 @@ QLineEdit:focus {
                       <property name="minimumSize">
                        <size>
                         <width>150</width>
-                        <height>0</height>
+                        <height>30</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
                         <width>150</width>
-                        <height>16777215</height>
+                        <height>30</height>
                        </size>
                       </property>
                       <property name="font">
