@@ -11,6 +11,9 @@
 ### GUI FILE
 from main import *
 
+# PATRAN INPUT CONVERTER FUNCTION
+from analysis.Patran_Input import Process_Patran_Input
+
 ## ==>> GLOBALS
 GLOBAL_STATE = 0
 GLOBAL_TITLE_BAR = True
@@ -144,3 +147,17 @@ class UIFunctions(MainWindow):
         if fileName:
             lineEditName.clear()
             lineEditName.setText(fileName)
+            
+    ########################################
+    # ADD/DEL VALUES TO TABLE
+    ########################################
+    
+    def addAction(self,GroupNameInput,GroupElementsInput,tableViewName,HeaderLabelList):
+        #Process data with Patran_input.py
+        result_list_elm = Process_Patran_Input(GroupElementsInput)
+        tableViewName.setHorizontalHeaderLabels(HeaderLabelList)
+        numRows = tableViewName.rowCount()
+        tableViewName.setColumnCount(2)
+        tableViewName.insertRow(numRows)
+        tableViewName.setItem(numRows, 0, QtWidgets.QTableWidgetItem(GroupNameInput))
+        tableViewName.setItem(numRows, 1, QtWidgets.QTableWidgetItem(str(result_list_elm)))

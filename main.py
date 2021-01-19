@@ -21,7 +21,9 @@ from app_modules import *
 
 class MainWindow(QMainWindow):
     
-    
+    ########################################################################
+    ## MAIN WINDOW DEFINITION
+    ########################################################################
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
@@ -47,6 +49,7 @@ class MainWindow(QMainWindow):
         # SET UI DEFINITIONS
         ########################################################################
         UIFunctions.uiDefinitions(self)
+        # ==>> END
 
         # TOGGLE MENU
         ########################################################################
@@ -54,7 +57,7 @@ class MainWindow(QMainWindow):
         # ==>> END
         
         
-        ## PAGES LINK
+        ## PAGES LINK / MENU BUTTONS CLICKED
         ########################################################################
         
         # PAGE 1 = HOME
@@ -81,7 +84,9 @@ class MainWindow(QMainWindow):
         self.ui.Btn_Run_Menu.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.Run_Widget))
         self.ui.Btn_Run_Menu.clicked.connect(lambda: UIFunctions.labelPage(self,'Run Analysis'))
         
+        ##-----------------------------------------------------------------------
         ## ==>> END        
+
 
         ## BROWSE BUTTONS CLICKED
         ########################################################################
@@ -97,7 +102,20 @@ class MainWindow(QMainWindow):
         
         # BROWSE F06.
         self.ui.Browse_F06_File_Btn.clicked.connect(lambda: UIFunctions.browseACTION(self, self.ui.F06_Input_LineEdit, 'F06'))
-
+        
+        ##-----------------------------------------------------------------------
+        ## ==>> END
+        
+        
+        ## ADD/DEL BUTTONS CLICKED
+        ########################################################################
+        
+        # ADD GROUP ELEMENTS
+        self.ui.AddGroup_Btn.clicked.connect(lambda: UIFunctions.addAction(self,self.ui.GroupName_LineEdit.text(),\
+        self.ui.GroupElms_LineEdit.text(),self.ui.GroupElm_TableWidget,['Group Name','Elements']))
+        
+        
+        ##-----------------------------------------------------------------------
         ## ==>> END
         
         
@@ -108,7 +126,7 @@ class MainWindow(QMainWindow):
     
     
     ########################################################################
-    ## APP EVENTS
+    ## EVENTS
     ########################################################################
     def mousePressEvent(self,event):
         self.dragPos = event.globalPos()
