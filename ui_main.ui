@@ -796,7 +796,7 @@ QPushButton:pressed {
              <locale language="English" country="Kenya"/>
             </property>
             <property name="currentIndex">
-             <number>4</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="Home_Widget">
              <property name="minimumSize">
@@ -1016,6 +1016,9 @@ border-radius:10px;
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">color: rgb(214, 214, 214);</string>
