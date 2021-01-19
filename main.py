@@ -99,7 +99,14 @@ class MainWindow(QMainWindow):
         self.ui.Browse_F06_File_Btn.clicked.connect(lambda: UIFunctions.browseACTION(self, self.ui.F06_Input_LineEdit, 'F06'))
 
         ## ==>> END
-
+        
+        
+        ## SHOW ==> MAIN WINDOW
+        ########################################################################
+        self.show()
+        ## ==> END ##
+    
+    
     ########################################################################
     ## APP EVENTS
     ########################################################################
@@ -112,5 +119,5 @@ if __name__ == "__main__":
     QtGui.QFontDatabase.addApplicationFont('fonts/segoeui.ttf')
     QtGui.QFontDatabase.addApplicationFont('fonts/segoeuib.ttf')
     window = MainWindow()
-    window.show()
+    #window.show()
     sys.exit(app.exec_())
