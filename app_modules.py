@@ -16,8 +16,16 @@ from ui_main import Ui_MainWindow
 # Import button style for toggle menu
 from ui_styles import Style
 
-# IMPORT FUNCTIONS
+# IMPORT UI FUNCTIONS
 from ui_functions import *
 
 # ==> APP FUNCTIONS
 # from app_functions import *
+
+####################################################
+## ANALYSIS FUNCTIONS
+####################################################
+
+
+
+
