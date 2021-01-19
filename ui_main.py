@@ -548,8 +548,8 @@ class Ui_MainWindow(object):
         self.Browse_Process_File_Btn = QPushButton(self.Process_Input_Btn_Frame)
         self.Browse_Process_File_Btn.setObjectName(u"Browse_Process_File_Btn")
         self.Browse_Process_File_Btn.setFocusPolicy(Qt.NoFocus)
-        self.Browse_Process_File_Btn.setMinimumSize(QSize(200, 0))
-        self.Browse_Process_File_Btn.setMaximumSize(QSize(80, 30))
+        self.Browse_Process_File_Btn.setMinimumSize(QSize(200, 30))
+        self.Browse_Process_File_Btn.setMaximumSize(QSize(200, 30))
         self.Browse_Process_File_Btn.setFont(font5)
         self.Browse_Process_File_Btn.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(52, 59, 72);\n"
@@ -674,8 +674,8 @@ class Ui_MainWindow(object):
         self.Browse_BDF_File_Btn = QPushButton(self.BDF_Btns_Frame)
         self.Browse_BDF_File_Btn.setObjectName(u"Browse_BDF_File_Btn")
         self.Browse_BDF_File_Btn.setFocusPolicy(Qt.NoFocus)
-        self.Browse_BDF_File_Btn.setMinimumSize(QSize(200, 0))
-        self.Browse_BDF_File_Btn.setMaximumSize(QSize(80, 30))
+        self.Browse_BDF_File_Btn.setMinimumSize(QSize(200, 30))
+        self.Browse_BDF_File_Btn.setMaximumSize(QSize(200, 30))
         self.Browse_BDF_File_Btn.setFont(font5)
         self.Browse_BDF_File_Btn.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(52, 59, 72);\n"
@@ -729,8 +729,8 @@ class Ui_MainWindow(object):
         self.Browse_F06_File_Btn = QPushButton(self.F06_Btns_Frame)
         self.Browse_F06_File_Btn.setObjectName(u"Browse_F06_File_Btn")
         self.Browse_F06_File_Btn.setFocusPolicy(Qt.NoFocus)
-        self.Browse_F06_File_Btn.setMinimumSize(QSize(200, 0))
-        self.Browse_F06_File_Btn.setMaximumSize(QSize(80, 30))
+        self.Browse_F06_File_Btn.setMinimumSize(QSize(200, 30))
+        self.Browse_F06_File_Btn.setMaximumSize(QSize(200, 30))
         self.Browse_F06_File_Btn.setFont(font5)
         self.Browse_F06_File_Btn.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(52, 59, 72);\n"
@@ -786,7 +786,7 @@ class Ui_MainWindow(object):
         self.Browse_PCH_File_Btn.setObjectName(u"Browse_PCH_File_Btn")
         self.Browse_PCH_File_Btn.setFocusPolicy(Qt.NoFocus)
         self.Browse_PCH_File_Btn.setMinimumSize(QSize(200, 30))
-        self.Browse_PCH_File_Btn.setMaximumSize(QSize(80, 30))
+        self.Browse_PCH_File_Btn.setMaximumSize(QSize(200, 30))
         self.Browse_PCH_File_Btn.setFont(font5)
         self.Browse_PCH_File_Btn.setStyleSheet(u"QPushButton {\n"
 "	border: 2px solid rgb(52, 59, 72);\n"
