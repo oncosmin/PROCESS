@@ -161,3 +161,6 @@ class UIFunctions(MainWindow):
         tableViewName.insertRow(numRows)
         tableViewName.setItem(numRows, 0, QtWidgets.QTableWidgetItem(GroupNameInput))
         tableViewName.setItem(numRows, 1, QtWidgets.QTableWidgetItem(str(result_list_elm)))
+        
+    def delActionButton(self,TableNameInput):
+        TableNameInput.removeRow(TableNameInput.currentRow())

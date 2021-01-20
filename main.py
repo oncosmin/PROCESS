@@ -110,10 +110,12 @@ class MainWindow(QMainWindow):
         ## ADD/DEL BUTTONS CLICKED
         ########################################################################
         
-        # ADD GROUP ELEMENTS
+        # ADD GROUP ELEMENTS TO TABLE
         self.ui.AddGroup_Btn.clicked.connect(lambda: UIFunctions.addAction(self,self.ui.GroupName_LineEdit.text(),\
         self.ui.GroupElms_LineEdit.text(),self.ui.GroupElm_TableWidget,['Group Name','Elements']))
         
+        # DELETE GROUP ELEMENTS ROW FROM TABLE
+        self.ui.DelGroup_Btn.clicked.connect(lambda: UIFunctions.delActionButton(self,self.ui.GroupElm_TableWidget))
         
         ##-----------------------------------------------------------------------
         ## ==>> END
