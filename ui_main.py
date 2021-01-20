@@ -994,10 +994,11 @@ class Ui_MainWindow(object):
         self.GroupElm_TableWidget.setFrameShape(QFrame.NoFrame)
         self.GroupElm_TableWidget.horizontalHeader().setVisible(True)
         self.GroupElm_TableWidget.horizontalHeader().setHighlightSections(True)
-        self.GroupElm_TableWidget.verticalHeader().setVisible(False)
+        self.GroupElm_TableWidget.verticalHeader().setVisible(True)
+        self.GroupElm_TableWidget.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
         self.GroupElm_TableWidget.setFocusPolicy(Qt.NoFocus)
         self.GroupElm_TableWidget.horizontalHeader().setStretchLastSection(True)
-           
+
         self.verticalLayout_15.addWidget(self.GroupElm_TableWidget)
         self.verticalLayout_13.addWidget(self.GroupElm_Table_Frem)
        
