@@ -95,6 +95,39 @@ class Style():
         subcontrol-position: top;
         subcontrol-origin: margin;
     }
+    
+    QScrollBar:horizontal {
+        background: rgb(64, 67, 99);
+        height: 16px;   
+        margin: 0px 21px 0px 21px;
+    }
+    QScrollBar::handle:horizontal {
+        background: rgb(141, 153, 174);
+		border-radius: 6px;
+    }
+    QScrollBar::add-page:horizontal {
+        background: rgb(64, 67, 99);
+    }
+    QScrollBar::sub-page:horizontal {
+        background: rgb(64, 67, 99);
+    }
+    QScrollBar::add-line:horizontal {
+        background: rgb(64, 67, 99);
+		border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+		width: 20px;
+        subcontrol-position: right;
+        subcontrol-origin: margin;
+    }
+    QScrollBar::sub-line:horizontal {
+        background: rgb(64, 67, 99);
+		border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        width: 20px;
+        subcontrol-position: left;
+        subcontrol-origin: margin;
+    }
+    
     QHeaderView::section{
         background-color: rgb(35, 35, 45);
     }
