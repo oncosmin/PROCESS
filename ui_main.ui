@@ -796,7 +796,7 @@ QPushButton:pressed {
              <locale language="English" country="Kenya"/>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="Home_Widget">
              <property name="minimumSize">
@@ -1864,6 +1864,9 @@ QLineEdit:focus {
                         <family>Segoe UI</family>
                         <pointsize>9</pointsize>
                        </font>
+                      </property>
+                      <property name="focusPolicy">
+                       <enum>Qt::NoFocus</enum>
                       </property>
                       <property name="styleSheet">
                        <string notr="true">QLineEdit {
@@ -4262,5 +4265,22 @@ QProgressBar::chunk {
  <resources>
   <include location="files.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>GroupElms_LineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>AddGroup_Btn</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>619</x>
+     <y>164</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>440</x>
+     <y>220</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
