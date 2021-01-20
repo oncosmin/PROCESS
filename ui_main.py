@@ -892,7 +892,7 @@ class Ui_MainWindow(object):
         self.GroupElms_Label.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_13.addWidget(self.GroupElms_Label)
-
+        
         self.GroupElms_LineEdit = QLineEdit(self.GroupElms_Frame)
         self.GroupElms_LineEdit.setObjectName(u"GroupElms_LineEdit")
         self.GroupElms_LineEdit.setMinimumSize(QSize(0, 30))
@@ -996,9 +996,9 @@ class Ui_MainWindow(object):
         self.GroupElm_TableWidget.horizontalHeader().setHighlightSections(True)
         self.GroupElm_TableWidget.verticalHeader().setVisible(True)
         self.GroupElm_TableWidget.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
-        self.GroupElm_TableWidget.setFocusPolicy(Qt.NoFocus)
+        self.GroupElm_TableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
         self.GroupElm_TableWidget.horizontalHeader().setStretchLastSection(True)
-
+        
         self.verticalLayout_15.addWidget(self.GroupElm_TableWidget)
         self.verticalLayout_13.addWidget(self.GroupElm_Table_Frem)
        
@@ -1187,74 +1187,28 @@ class Ui_MainWindow(object):
         self.horizontalLayout_17.setSpacing(0)
         self.horizontalLayout_17.setObjectName(u"horizontalLayout_17")
         self.horizontalLayout_17.setContentsMargins(10, 10, 10, 10)
+        
+        ## MATERIAL FACING TABLE WIDGET DEFINTION
+        ##################################################################
+        
         self.Material_Facing_TableWidget = QTableWidget(self.Material_Facing_Table_Frame)
         self.Material_Facing_TableWidget.setObjectName(u"Material_Facing_TableWidget")
-        self.Material_Facing_TableWidget.setStyleSheet(u"QTableWidget {	\n"
-"	background-color: rgb(40, 42, 62);\n"
-"	padding: 10px;\n"
-"	border-radius: 5px;\n"
-"	gridline-color: rgb(44, 49, 60);\n"
-"	border-bottom: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-"QTableWidget::item{\n"
-"	border-color: rgb(44, 49, 60);\n"
-"	padding-left: 5px;\n"
-"	padding-right: 5px;\n"
-"	gridline-color: rgb(44, 49, 60);\n"
-"}\n"
-"QTableWidget::item:selected{\n"
-"	background-color: rgb(141, 153, 174);\n"
-"}\n"
-"QScrollBar:horizontal {\n"
-"    border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    height: 14px;\n"
-"    margin: 0px 21px 0 21px;\n"
-"	border-radius: 0px;\n"
-"}\n"
-" QScrollBar:vertical {\n"
-"	border: none;\n"
-"    background: rgb(52, 59, 72);\n"
-"    width: 14px;\n"
-"    margin: 21px 0 21px 0;\n"
-"	border-radius: 0px;\n"
-" }\n"
-"QHeaderView::section{\n"
-"	Background-color: rgb(39, 44, 54);\n"
-"	max-width: 30px;\n"
-"	border: 1px solid rgb(44, 49, 60);\n"
-"	border-style: none;\n"
-"    border-bottom: 1px solid rgb(44, 49, 60);\n"
-"    border-right: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-"QT"
-                        "ableView::horizontalHeader {	\n"
-"	background-color: rgb(239, 35, 60);\n"
-"}\n"
-"QHeaderView::section:horizontal\n"
-"{\n"
-"    border: 1px solid rgb(32, 34, 42);\n"
-"	background-color: rgb(27, 29, 35);\n"
-"	padding: 3px;\n"
-"	border-top-left-radius: 7px;\n"
-"    border-top-right-radius: 7px;\n"
-"}\n"
-"QHeaderView::section:vertical\n"
-"{\n"
-"    border: 1px solid rgb(44, 49, 60);\n"
-"}\n"
-"")
+        self.Material_Facing_TableWidget.setStyleSheet(Style.style_table_standard)
         self.Material_Facing_TableWidget.setFrameShape(QFrame.NoFrame)
-        self.Material_Facing_TableWidget.horizontalHeader().setVisible(False)
+        self.Material_Facing_TableWidget.horizontalHeader().setVisible(True)
         self.Material_Facing_TableWidget.horizontalHeader().setHighlightSections(True)
-        self.Material_Facing_TableWidget.verticalHeader().setVisible(False)
+        self.Material_Facing_TableWidget.verticalHeader().setVisible(True)
+        self.Material_Facing_TableWidget.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
+        self.Material_Facing_TableWidget.setFocusPolicy(Qt.NoFocus)
+        self.Material_Facing_TableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+        self.Material_Facing_TableWidget.horizontalHeader().setStretchLastSection(True)
 
         self.horizontalLayout_17.addWidget(self.Material_Facing_TableWidget)
-
-
         self.horizontalLayout_16.addWidget(self.Material_Facing_Table_Frame)
-
-
+        
+        ##################################################################
+        ## END
+                
         self.verticalLayout_16.addWidget(self.Material_Facing_Frame)
 
         self.Material_Core_Frame = QFrame(self.Composite_Widget)
@@ -1516,19 +1470,28 @@ class Ui_MainWindow(object):
         self.horizontalLayout_26.setSpacing(10)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
         self.horizontalLayout_26.setContentsMargins(10, 10, 10, 10)
+        
+        ## COMPOSITE MATERIAL CORE TABLE WIDGET DEFINTION
+        ##################################################################
+        
         self.CompCore_TableWidget = QTableWidget(self.Comp_Core_Table_Frame)
         self.CompCore_TableWidget.setObjectName(u"CompCore_TableWidget")
+        self.CompCore_TableWidget.setStyleSheet(Style.style_table_standard)
         self.CompCore_TableWidget.setFrameShape(QFrame.NoFrame)
-        self.CompCore_TableWidget.horizontalHeader().setVisible(False)
+        self.CompCore_TableWidget.horizontalHeader().setVisible(True)
         self.CompCore_TableWidget.horizontalHeader().setHighlightSections(True)
-        self.CompCore_TableWidget.verticalHeader().setVisible(False)
+        self.CompCore_TableWidget.verticalHeader().setVisible(True)
+        self.CompCore_TableWidget.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
+        self.CompCore_TableWidget.setFocusPolicy(Qt.NoFocus)
+        self.CompCore_TableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+        self.CompCore_TableWidget.horizontalHeader().setStretchLastSection(True)
+
 
         self.horizontalLayout_26.addWidget(self.CompCore_TableWidget)
-
-
         self.horizontalLayout_20.addWidget(self.Comp_Core_Table_Frame)
-
-
+        ##################################################################
+        ## END
+        
         self.verticalLayout_16.addWidget(self.Material_Core_Frame)
 
         self.Pages_Widget.addWidget(self.Composite_Widget)
@@ -1788,18 +1751,28 @@ class Ui_MainWindow(object):
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
         self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
+        
+        ## METALLIC MATERIAL TABLE WIDGET DEFINTION
+        ##################################################################
+        
         self.Metallic_TableWidget = QTableWidget(self.Metallic_Table_Frame)
         self.Metallic_TableWidget.setObjectName(u"Metallic_TableWidget")
+        self.Metallic_TableWidget.setStyleSheet(Style.style_table_standard)
         self.Metallic_TableWidget.setFrameShape(QFrame.NoFrame)
-        self.Metallic_TableWidget.horizontalHeader().setVisible(False)
+        self.Metallic_TableWidget.horizontalHeader().setVisible(True)
         self.Metallic_TableWidget.horizontalHeader().setHighlightSections(True)
-        self.Metallic_TableWidget.verticalHeader().setVisible(False)
+        self.Metallic_TableWidget.verticalHeader().setVisible(True)
+        self.Metallic_TableWidget.verticalHeader().setDefaultAlignment(Qt.AlignHCenter)
+        self.Metallic_TableWidget.setFocusPolicy(Qt.NoFocus)
+        self.Metallic_TableWidget.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeToContents)
+        self.Metallic_TableWidget.horizontalHeader().setStretchLastSection(True)
 
         self.verticalLayout_23.addWidget(self.Metallic_TableWidget)
-
-
         self.verticalLayout_20.addWidget(self.Metallic_Table_Frame)
-
+        
+        ##################################################################
+        ## END
+        
         self.Pages_Widget.addWidget(self.Metallic_Widget)
         self.Run_Widget = QWidget()
         self.Run_Widget.setObjectName(u"Run_Widget")
@@ -2037,12 +2010,30 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-
+        
         # CURRENT WIDGET PAGE THAT SHOWS WHEN OPENING APP
         self.Pages_Widget.setCurrentIndex(0)
 
-
+        ##########################################################
+        ## SIGNALS / SLOTS
+        ##########################################################
+        
+        # IF RETURN PRESSED IN THE LINE EDIT CLICK ON ADD GROUP TO TABLE
+        self.GroupElms_LineEdit.returnPressed.connect(self.AddGroup_Btn.click)
+        
+        # IF RETURN PRESSED IN THE MATERIAL FACING FOSU LINE ADD TO TABLE
+        self.CompFacing_FOSu_LineEdit.returnPressed.connect(self.CompFacing_Add_Btn.click)
+        
+        # IF RETURN PRESSED IN THE MATERIAL CORE FOSU LINE ADD TO TABLE
+        self.CompCore_FOSu_LineEdit.returnPressed.connect(self.CompCore_Add_Btn.click)
+        
+        # IF RETURN PRESSED IN THE METALLIC MATERIAL FOSU ADD TO TABLE
+        self.Metallic_FOSu_LineEdit.returnPressed.connect(self.Metallic_Add_Btn.click)
+       
+        
+        
         QMetaObject.connectSlotsByName(MainWindow)
+        
     # setupUi
 
     def retranslateUi(self, MainWindow):

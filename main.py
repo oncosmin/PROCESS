@@ -107,15 +107,42 @@ class MainWindow(QMainWindow):
         ## ==>> END
         
         
-        ## ADD/DEL BUTTONS CLICKED
+        ## ADD BUTTONS CLICKED
         ########################################################################
         
         # ADD GROUP ELEMENTS TO TABLE
-        self.ui.AddGroup_Btn.clicked.connect(lambda: UIFunctions.addAction(self,self.ui.GroupName_LineEdit.text(),\
-        self.ui.GroupElms_LineEdit.text(),self.ui.GroupElm_TableWidget,['Group Name','Elements']))
+        self.ui.AddGroup_Btn.clicked.connect(lambda: UIFunctions.addActionGroup(self,self.ui.GroupName_LineEdit.text(),\
+            self.ui.GroupElms_LineEdit.text(),self.ui.GroupElm_TableWidget,['Group Name','Elements']))
         
-        # DELETE GROUP ELEMENTS ROW FROM TABLE
+                
+        # ADD COMPOSITE MATERIAL FACING VALUES TO TABLE
+        self.ui.CompFacing_Add_Btn.clicked.connect(lambda: UIFunctions.addActionCompositeFacing(self, self.ui.CompFacing_MatID_LineEdit.text(),\
+            self.ui.CompFacing_FOSu_LineEdit.text(),self.ui.Material_Facing_TableWidget,['Composite Material Facing ID','FOSu']))
+        
+        # ADD COMPOSITE MATERIAL CORE VALUES TO TABLE
+        self.ui.CompCore_Add_Btn.clicked.connect(lambda: UIFunctions.addActionCompositeCore(self,self.ui.CompCore_MatID_LineEdit.text(),\
+            self.ui.CompCore_FsL_LineEdit.text(),self.ui.CompCore_FsW_LineEdit.text(),self.ui.CompCore_FOSu_LineEdit.text(),\
+                self.ui.CompCore_TableWidget,['Composite Material Core ID', 'FsL','FsW','FOSu']))
+        
+        # ADD METALLIC MATERIAL VALUES TO TABLE
+        self.ui.Metallic_Add_Btn.clicked.connect(lambda: UIFunctions.addActionMetallic(self, self.ui.Metallic_MatID_LineEdit.text(),\
+            self.ui.Metallic_FOSy_LineEdit.text(),self.ui.Metallic_FOSu_LineEdit.text(),\
+                self.ui.Metallic_TableWidget,['Metallic Material ID','FOSy','FOSu']))       
+        
+        ## DELETE BUTTONS CLICKED
+        ########################################################################
+        
+        # DELETE GROUP ELEMENTS TABLE ROW
         self.ui.DelGroup_Btn.clicked.connect(lambda: UIFunctions.delActionButton(self,self.ui.GroupElm_TableWidget))
+        
+        # DELETE COMPOSITE MATERIAL FACING TABLE ROW
+        self.ui.CompFacing_Del_Btn.clicked.connect(lambda: UIFunctions.delActionButton(self,self.ui.Material_Facing_TableWidget))
+        
+        # DELETE COMPOSITE MATERIAL CORE TABLE ROW
+        self.ui.CompCore_Del_Btn.clicked.connect(lambda: UIFunctions.delActionButton(self,self.ui.CompCore_TableWidget))
+        
+        # DELETE METALLIC MATERIAL TABLE ROW
+        self.ui.Metallic_Del_Btn.clicked.connect(lambda: UIFunctions.delActionButton(self,self.ui.Metallic_TableWidget))
         
         ##-----------------------------------------------------------------------
         ## ==>> END

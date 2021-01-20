@@ -149,10 +149,11 @@ class UIFunctions(MainWindow):
             lineEditName.setText(fileName)
             
     ########################################
-    # ADD/DEL VALUES TO TABLE
+    # ADD/DEL VALUES TO TABLE FUNCTIONS
     ########################################
     
-    def addAction(self,GroupNameInput,GroupElementsInput,tableViewName,HeaderLabelList):
+    ## ADD VALUES TO GROUPELEMENT TABLE 
+    def addActionGroup(self,GroupNameInput,GroupElementsInput,tableViewName,HeaderLabelList):
         #Process data with Patran_input.py
         result_list_elm = Process_Patran_Input(GroupElementsInput)
         tableViewName.setHorizontalHeaderLabels(HeaderLabelList)
@@ -162,5 +163,39 @@ class UIFunctions(MainWindow):
         tableViewName.setItem(numRows, 0, QtWidgets.QTableWidgetItem(GroupNameInput))
         tableViewName.setItem(numRows, 1, QtWidgets.QTableWidgetItem(str(result_list_elm)))
         
+    ## ADD VALUES TO COMPOSITE MATERIAL FACING TABLE
+    def addActionCompositeFacing(self,FacingNameInput,FacingFOSu,tableMatFacing,HeaderLabelList):
+        numRows = tableMatFacing.rowCount()
+        tableMatFacing.setHorizontalHeaderLabels(HeaderLabelList)
+        tableMatFacing.setColumnCount(2)
+        tableMatFacing.insertRow(numRows)
+        tableMatFacing.setItem(numRows, 0, QtWidgets.QTableWidgetItem(FacingNameInput))
+        tableMatFacing.setItem(numRows, 1, QtWidgets.QTableWidgetItem(FacingFOSu))
+    
+    ## ADD VALUES TO COMPOSITE MATERIAL CORE TABLE
+    def addActionCompositeCore(self,CoreNameInput,CoreFSL,CoreFSW,CoreFOSU,tableMatCore,HeaderLabelList):
+        numRows = tableMatCore.rowCount()
+        tableMatCore.setHorizontalHeaderLabels(HeaderLabelList)
+        tableMatCore.setColumnCount(4)
+        tableMatCore.insertRow(numRows)
+        tableMatCore.setItem(numRows, 0, QtWidgets.QTableWidgetItem(CoreNameInput))
+        tableMatCore.setItem(numRows, 1, QtWidgets.QTableWidgetItem(CoreFSL))
+        tableMatCore.setItem(numRows, 2, QtWidgets.QTableWidgetItem(CoreFSW))
+        tableMatCore.setItem(numRows, 3, QtWidgets.QTableWidgetItem(CoreFOSU))
+    
+    ## ADD VALUES TO METALLIC MATERIALS TABLE
+    def addActionMetallic(self,MetallicNameInput,MetallicFOSY,MetallicFOSU,tableMat,HeaderLabelList):
+        numRows = tableMat.rowCount()
+        tableMat.setHorizontalHeaderLabels(HeaderLabelList)
+        tableMat.setColumnCount(3)
+        tableMat.insertRow(numRows)
+        tableMat.setItem(numRows, 0, QtWidgets.QTableWidgetItem(MetallicNameInput))
+        tableMat.setItem(numRows, 1, QtWidgets.QTableWidgetItem(MetallicFOSY))
+        tableMat.setItem(numRows, 2, QtWidgets.QTableWidgetItem(MetallicFOSU))
+        
+    
+    ## DELETE ROWS FROM ALL TABLES
     def delActionButton(self,TableNameInput):
         TableNameInput.removeRow(TableNameInput.currentRow())
+        
+        
