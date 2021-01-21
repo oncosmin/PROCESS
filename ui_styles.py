@@ -157,3 +157,33 @@ class Style():
     }
     """
     )
+    style_message_box = (
+    """
+    QMessageBox {
+        border-radius: 50px;
+        background-color: rgb(35, 35, 45);
+        border: 2px solid rgb(217, 4, 41);
+    }
+    QMessageBox QLabel {
+        color: rgb(225, 225, 225);
+        font-size: 15px;
+        font: 'Segoe UI';
+    }
+    QMessageBox QPushButton {
+        width: 50;
+        height: 20;
+        border: 2px solid rgb(52, 59, 72);
+        border-radius: 5px;	
+        background-color: rgb(52, 59, 72);
+        color: rgb(225, 225, 225);
+    } 
+    QMessageBox QPushButton::hover {
+        background-color: rgb(57, 65, 80);
+	    border: 2px solid rgb(61, 70, 86);
+    } 
+    QMessageBox QPushButton::pressed {
+        background-color: rgb(217, 4, 41);
+        border: 2px solid rgb(43, 50, 61);
+    } 
+    """
+    )
