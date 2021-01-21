@@ -147,6 +147,12 @@ class MainWindow(QMainWindow):
         ##-----------------------------------------------------------------------
         ## ==>> END
         
+        ## SAVE PROCESS BUTTON CLICKED
+        ########################################################################
+        self.ui.Save_Input_File_Btn.clicked.connect(lambda: UIFunctions.SaveFunction(self,self.ui.Save_Input_File_LineEdit.text(),\
+            self.ui.BDF_Input_LineEdit.text(),self.ui.F06_Input_LineEdit.text(),self.ui.PCH_Input_LineEdit.text(),self.ui.GroupElm_TableWidget,\
+                self.ui.Material_Facing_TableWidget,self.ui.CompCore_TableWidget,self.ui.Metallic_TableWidget))
+        
         
         ## SHOW ==> MAIN WINDOW
         ########################################################################

@@ -199,3 +199,47 @@ class UIFunctions(MainWindow):
         TableNameInput.removeRow(TableNameInput.currentRow())
         
         
+    ########################################
+    # SAVE PROCESS FILE FUNCTION
+    ########################################       
+
+    def SaveFunction(self,processFileName,bdfFile,f06File,pchFile,GroupsTable,matFacingTable,matCoreTable,matMetallicTable):
+
+        ## Check if filename is empty and don't continue if so
+        if processFileName == '':
+            UIFunctions.messageUser('Save File name cannot be empty !!')
+        else:    
+           ## Open Save File and Write to it
+            with open(processFileName + '.process', 'w') as OutputFile:
+                OutputFile.write("# PROCESS INPUT FILE \n# NASTRAN INPUT/OUTPUT FILES:\n")
+                OutputFile.write(bdfFile+'\n'+f06File+'\n'+pchFile+'\n')
+                OutputFile.write("# GROUPS OF ELEMENTS INPUT:\n")
+                UIFunctions.writeTableData(GroupsTable,OutputFile)
+                OutputFile.write('# COMPOSITE MATERIAL FACING INPUT:\n')
+                UIFunctions.writeTableData(matFacingTable,OutputFile)
+                OutputFile.write('# COMPOSITE MATERIAL CORE INPUT:\n')
+                UIFunctions.writeTableData(matCoreTable,OutputFile)
+                OutputFile.write('# METALLIC MATERIAL INPUT:\n')
+                UIFunctions.writeTableData(matMetallicTable,OutputFile)
+                
+            UIFunctions.messageUser('Filed Saved!')
+            
+            
+    ## Function to write values from QtableWidget to Output Save File   
+    def writeTableData(tableInput,SaveFile):
+        for row in range(tableInput.rowCount()):
+            for column in range(tableInput.columnCount()):
+                SaveFile.write(tableInput.item(row,column).text()+',')
+            SaveFile.write('\n')
+            
+
+    ##############################################################
+    # DISPLAY CRITICAL INFORMATION TO USER, CUSTOMIZED MESSAGEBOX
+    ##############################################################
+    def messageUser(textToDisplay):
+        msgbox = QMessageBox()
+        msgbox.setWindowFlag(Qt.FramelessWindowHint)
+        msgbox.setStyleSheet(Style.style_message_box)
+        msgbox.setText(textToDisplay)
+        msgbox.exec()
+        
