@@ -148,6 +148,7 @@ class UIFunctions(MainWindow):
             lineEditName.clear()
             lineEditName.setText(fileName)
             
+            
     ########################################
     # ADD/DEL VALUES TO TABLE FUNCTIONS
     ########################################
@@ -207,7 +208,7 @@ class UIFunctions(MainWindow):
 
         ## Check if filename is empty and don't continue if so
         if processFileName == '':
-            UIFunctions.messageUser('Save File name cannot be empty !!')
+            UIFunctions.messageUser('SAVE FILE NAME IS EMPTY!')
         else:    
            ## Open Save File and Write to it
             with open(processFileName + '.process', 'w') as OutputFile:
@@ -231,7 +232,19 @@ class UIFunctions(MainWindow):
             for column in range(tableInput.columnCount()):
                 SaveFile.write(tableInput.item(row,column).text()+',')
             SaveFile.write('\n')
-            
+  
+  
+    ##############################################################
+    # OPEN PROCESS FILE FUNCTION AND ADD INPUTS TO APP
+    ##############################################################           
+    def openInputFile(self, FileName):
+        f = open(FileName,'r')
+        lines = f.readlines()
+        
+        # for line in f:
+        #     if line == ''
+        
+
 
     ##############################################################
     # DISPLAY CRITICAL INFORMATION TO USER, CUSTOMIZED MESSAGEBOX
@@ -240,6 +253,7 @@ class UIFunctions(MainWindow):
         msgbox = QMessageBox()
         msgbox.setWindowFlag(Qt.FramelessWindowHint)
         msgbox.setStyleSheet(Style.style_message_box)
+        msgbox.setIcon(QMessageBox.Information)
         msgbox.setText(textToDisplay)
         msgbox.exec()
         
