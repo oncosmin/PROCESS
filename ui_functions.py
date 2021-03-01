@@ -222,6 +222,7 @@ class UIFunctions(MainWindow):
                 UIFunctions.writeTableData(matCoreTable,OutputFile)
                 OutputFile.write('# METALLIC MATERIAL INPUT:\n')
                 UIFunctions.writeTableData(matMetallicTable,OutputFile)
+                OutputFile.write('# END')
                 
             UIFunctions.messageUser('Filed Saved!')
             
@@ -236,6 +237,7 @@ class UIFunctions(MainWindow):
   
     ##############################################################
     # OPEN PROCESS FILE FUNCTION AND ADD INPUTS TO APP
+    # CLICK ON ADD INPUT BUTTON
     ##############################################################           
     def openInputFile(self, FileName):
         f = open(FileName,'r')
