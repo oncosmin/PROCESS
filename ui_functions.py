@@ -298,10 +298,24 @@ class UIFunctions(MainWindow):
                 else:
                     pass 
 
+    
+    ##############################################################
+    # RUN ANALYSIS
+    ##############################################################
+
+    # Progress Bar
+    def progressBarRun(self,progressBarName):
+        count = 0
+        while count < 100:
+            count += 1
+            time.sleep(0.1)
+            progressBarName.setValue(count)
+
+
     ##############################################################
     # DISPLAY CRITICAL INFORMATION TO USER, CUSTOMIZED MESSAGEBOX
     ##############################################################
-    def messageUser(textToDisplay):
+    def messageUser(self,textToDisplay):
         msgbox = QMessageBox()
         msgbox.setWindowFlag(Qt.FramelessWindowHint)
         msgbox.setStyleSheet(Style.style_message_box)

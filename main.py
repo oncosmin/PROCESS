@@ -11,10 +11,12 @@
 
 import sys
 import platform
+import time
 from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PySide2.QtWidgets import *
+
 
 # GUI FILE
 from app_modules import *
@@ -152,12 +154,20 @@ class MainWindow(QMainWindow):
         self.ui.Save_Input_File_Btn.clicked.connect(lambda: UIFunctions.SaveFunction(self,self.ui.Save_Input_File_LineEdit.text(),\
             self.ui.BDF_Input_LineEdit.text(),self.ui.F06_Input_LineEdit.text(),self.ui.PCH_Input_LineEdit.text(),self.ui.GroupElm_TableWidget,\
                 self.ui.Material_Facing_TableWidget,self.ui.CompCore_TableWidget,self.ui.Metallic_TableWidget))
-        
+        ## ==> END ##
+    
         ## ADD PROCESS INPUT FILE CLICKED - 
         ########################################################################
         self.ui.Add_Input_File_Btn.clicked.connect(lambda: UIFunctions.openInputFile(self, self.ui.Process_Input_LineEdit.text(), \
             self.ui.BDF_Input_LineEdit, self.ui.F06_Input_LineEdit, self.ui.PCH_Input_LineEdit,\
                 self.ui.GroupElm_TableWidget,self.ui.Material_Facing_TableWidget, self.ui.CompCore_TableWidget, self.ui.Metallic_TableWidget))
+        ## ==> END ##
+        
+        
+        ## PRESS RUN BUTTON - RUN ANALYSIS 
+        ########################################################################
+        self.ui.Run_Analysis_Btn.clicked.connect(lambda: UIFunctions.progressBarRun(self, self.ui.Run_Analysis_Progress_Bar))
+        
         
         ## SHOW ==> MAIN WINDOW
         ########################################################################
