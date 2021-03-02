@@ -28,6 +28,8 @@ def Process_Patran_Input(gui_list):
                 while a != int(inside_list[1]):
                     a += 1
                     last_list.append(a)
+        elif not elms:
+            break
         else:
             last_list.append(int(elms))
 
