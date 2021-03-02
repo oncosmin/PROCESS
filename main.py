@@ -112,22 +112,22 @@ class MainWindow(QMainWindow):
         
         # ADD GROUP ELEMENTS TO TABLE
         self.ui.AddGroup_Btn.clicked.connect(lambda: UIFunctions.addActionGroup(self,self.ui.GroupName_LineEdit.text(),\
-            self.ui.GroupElms_LineEdit.text(),self.ui.GroupElm_TableWidget,['Group Name','Elements']))
+            self.ui.GroupElms_LineEdit.text(),self.ui.GroupElm_TableWidget))
         
                 
         # ADD COMPOSITE MATERIAL FACING VALUES TO TABLE
         self.ui.CompFacing_Add_Btn.clicked.connect(lambda: UIFunctions.addActionCompositeFacing(self, self.ui.CompFacing_MatID_LineEdit.text(),\
-            self.ui.CompFacing_FOSu_LineEdit.text(),self.ui.Material_Facing_TableWidget,['Composite Material Facing ID','FOSu']))
+            self.ui.CompFacing_FOSu_LineEdit.text(),self.ui.Material_Facing_TableWidget))
         
         # ADD COMPOSITE MATERIAL CORE VALUES TO TABLE
         self.ui.CompCore_Add_Btn.clicked.connect(lambda: UIFunctions.addActionCompositeCore(self,self.ui.CompCore_MatID_LineEdit.text(),\
             self.ui.CompCore_FsL_LineEdit.text(),self.ui.CompCore_FsW_LineEdit.text(),self.ui.CompCore_FOSu_LineEdit.text(),\
-                self.ui.CompCore_TableWidget,['Composite Material Core ID', 'FsL','FsW','FOSu']))
+                self.ui.CompCore_TableWidget))
         
         # ADD METALLIC MATERIAL VALUES TO TABLE
         self.ui.Metallic_Add_Btn.clicked.connect(lambda: UIFunctions.addActionMetallic(self, self.ui.Metallic_MatID_LineEdit.text(),\
             self.ui.Metallic_FOSy_LineEdit.text(),self.ui.Metallic_FOSu_LineEdit.text(),\
-                self.ui.Metallic_TableWidget,['Metallic Material ID','FOSy','FOSu']))       
+                self.ui.Metallic_TableWidget))       
         
         ## DELETE BUTTONS CLICKED
         ########################################################################
@@ -153,6 +153,11 @@ class MainWindow(QMainWindow):
             self.ui.BDF_Input_LineEdit.text(),self.ui.F06_Input_LineEdit.text(),self.ui.PCH_Input_LineEdit.text(),self.ui.GroupElm_TableWidget,\
                 self.ui.Material_Facing_TableWidget,self.ui.CompCore_TableWidget,self.ui.Metallic_TableWidget))
         
+        ## ADD PROCESS INPUT FILE CLICKED - 
+        ########################################################################
+        self.ui.Add_Input_File_Btn.clicked.connect(lambda: UIFunctions.openInputFile(self, self.ui.Process_Input_LineEdit.text(), \
+            self.ui.BDF_Input_LineEdit, self.ui.F06_Input_LineEdit, self.ui.PCH_Input_LineEdit,\
+                self.ui.GroupElm_TableWidget,self.ui.Material_Facing_TableWidget, self.ui.CompCore_TableWidget, self.ui.Metallic_TableWidget))
         
         ## SHOW ==> MAIN WINDOW
         ########################################################################

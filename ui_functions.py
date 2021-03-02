@@ -154,8 +154,9 @@ class UIFunctions(MainWindow):
     ########################################
     
     ## ADD VALUES TO GROUPELEMENT TABLE 
-    def addActionGroup(self,GroupNameInput,GroupElementsInput,tableViewName,HeaderLabelList):
+    def addActionGroup(self,GroupNameInput,GroupElementsInput,tableViewName):
         #Process data with Patran_input.py
+        HeaderLabelList = ['Group Name','Elements']
         result_list_elm = Process_Patran_Input(GroupElementsInput)
         tableViewName.setHorizontalHeaderLabels(HeaderLabelList)
         numRows = tableViewName.rowCount()
@@ -165,7 +166,8 @@ class UIFunctions(MainWindow):
         tableViewName.setItem(numRows, 1, QtWidgets.QTableWidgetItem(str(result_list_elm)))
         
     ## ADD VALUES TO COMPOSITE MATERIAL FACING TABLE
-    def addActionCompositeFacing(self,FacingNameInput,FacingFOSu,tableMatFacing,HeaderLabelList):
+    def addActionCompositeFacing(self,FacingNameInput,FacingFOSu,tableMatFacing):
+        HeaderLabelList = ['Composite Material Facing ID','FOSu']
         numRows = tableMatFacing.rowCount()
         tableMatFacing.setHorizontalHeaderLabels(HeaderLabelList)
         tableMatFacing.setColumnCount(2)
@@ -174,7 +176,8 @@ class UIFunctions(MainWindow):
         tableMatFacing.setItem(numRows, 1, QtWidgets.QTableWidgetItem(FacingFOSu))
     
     ## ADD VALUES TO COMPOSITE MATERIAL CORE TABLE
-    def addActionCompositeCore(self,CoreNameInput,CoreFSL,CoreFSW,CoreFOSU,tableMatCore,HeaderLabelList):
+    def addActionCompositeCore(self,CoreNameInput,CoreFSL,CoreFSW,CoreFOSU,tableMatCore):
+        HeaderLabelList = ['Composite Material Core ID', 'FsL','FsW','FOSu']
         numRows = tableMatCore.rowCount()
         tableMatCore.setHorizontalHeaderLabels(HeaderLabelList)
         tableMatCore.setColumnCount(4)
@@ -185,7 +188,8 @@ class UIFunctions(MainWindow):
         tableMatCore.setItem(numRows, 3, QtWidgets.QTableWidgetItem(CoreFOSU))
     
     ## ADD VALUES TO METALLIC MATERIALS TABLE
-    def addActionMetallic(self,MetallicNameInput,MetallicFOSY,MetallicFOSU,tableMat,HeaderLabelList):
+    def addActionMetallic(self,MetallicNameInput,MetallicFOSY,MetallicFOSU,tableMat):
+        HeaderLabelList = ['Metallic Material ID','FOSy','FOSu']
         numRows = tableMat.rowCount()
         tableMat.setHorizontalHeaderLabels(HeaderLabelList)
         tableMat.setColumnCount(3)
@@ -215,20 +219,20 @@ class UIFunctions(MainWindow):
                 OutputFile.write("# PROCESS INPUT FILE \n# NASTRAN INPUT/OUTPUT FILES:\n")
                 OutputFile.write(bdfFile+'\n'+f06File+'\n'+pchFile+'\n')
                 OutputFile.write("# GROUPS OF ELEMENTS INPUT:\n")
-                UIFunctions.writeTableData(GroupsTable,OutputFile)
+                UIFunctions.writeTableData(self,GroupsTable,OutputFile)
                 OutputFile.write('# COMPOSITE MATERIAL FACING INPUT:\n')
-                UIFunctions.writeTableData(matFacingTable,OutputFile)
+                UIFunctions.writeTableData(self,matFacingTable,OutputFile)
                 OutputFile.write('# COMPOSITE MATERIAL CORE INPUT:\n')
-                UIFunctions.writeTableData(matCoreTable,OutputFile)
+                UIFunctions.writeTableData(self,matCoreTable,OutputFile)
                 OutputFile.write('# METALLIC MATERIAL INPUT:\n')
-                UIFunctions.writeTableData(matMetallicTable,OutputFile)
+                UIFunctions.writeTableData(self,matMetallicTable,OutputFile)
                 OutputFile.write('# END')
                 
             UIFunctions.messageUser('Filed Saved!')
             
             
     ## Function to write values from QtableWidget to Output Save File   
-    def writeTableData(tableInput,SaveFile):
+    def writeTableData(self,tableInput,SaveFile):
         for row in range(tableInput.rowCount()):
             for column in range(tableInput.columnCount()):
                 SaveFile.write(tableInput.item(row,column).text()+',')
@@ -238,15 +242,61 @@ class UIFunctions(MainWindow):
     ##############################################################
     # OPEN PROCESS FILE FUNCTION AND ADD INPUTS TO APP
     # CLICK ON ADD INPUT BUTTON
-    ##############################################################           
-    def openInputFile(self, FileName):
-        f = open(FileName,'r')
-        lines = f.readlines()
+    ##############################################################  
+    
+    def openInputFile(self, FileName, bdfLine, f06Line, pchLine,\
+        ElmTable, CompFacingTable, CompCoreTable, MetTable):
         
-        # for line in f:
-        #     if line == ''
+        with open(FileName) as f:
+            # Strip newline from text
+            l = f.readlines()
+            lines=[]
+            for i in l:
+                lines.append(i.strip('\n'))
+            
+            #not the best solution, i know!
+            def writeFromInputFileToGUI(startCount,lengthCount,cType):
         
-
+                for i in range(1,lengthCount):
+                    listLineStr = lines[startCount+i].split(',')
+                    if cType == 1:
+                        bdfLine.setText(lines[startCount+1])
+                        f06Line.setText(lines[startCount+2])
+                        pchLine.setText(lines[startCount+3])
+                    elif cType == 2:
+                        listLineNumbers = lines[startCount+i].split('[', 1)[1].split(']')[0]
+                        ElmValues = 'Elm ' + listLineNumbers.replace(',','')
+                        UIFunctions.addActionGroup(self,listLineStr[0],ElmValues, ElmTable)
+                    elif cType == 3:
+                        UIFunctions.addActionCompositeFacing(self,listLineStr[0],listLineStr[1],CompFacingTable)
+                    elif cType == 4:
+                        UIFunctions.addActionCompositeCore(self,listLineStr[0],listLineStr[1],\
+                            listLineStr[2],listLineStr[3],CompCoreTable)
+                    elif cType == 5:
+                        UIFunctions.addActionMetallic(self,listLineStr[0],listLineStr[1],\
+                            listLineStr[2],MetTable)
+            
+            # run through lines, identify groups and write to GUI
+            for count, line in enumerate(lines):
+                if line.startswith('# NASTRAN INPUT/OUTPUT FILES'):
+                    a=count
+                elif line.startswith('# GROUPS OF ELEMENTS INPUT'):
+                    b=count
+                    writeFromInputFileToGUI(a,b-a,1)
+                elif line.startswith('# COMPOSITE MATERIAL FACING INPUT'):
+                    c=count
+                    writeFromInputFileToGUI(b,c-b,2)
+                elif line.startswith('# COMPOSITE MATERIAL CORE INPUT'):
+                    d=count
+                    writeFromInputFileToGUI(c,d-c,3)
+                elif line.startswith('# METALLIC MATERIAL INPUT'):
+                    e=count
+                    writeFromInputFileToGUI(d,e-d,4)
+                elif line.startswith('# END'):
+                    f=count
+                    writeFromInputFileToGUI(e,f-e,5)
+                else:
+                    pass 
 
     ##############################################################
     # DISPLAY CRITICAL INFORMATION TO USER, CUSTOMIZED MESSAGEBOX
