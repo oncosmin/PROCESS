@@ -228,7 +228,7 @@ class UIFunctions(MainWindow):
                 UIFunctions.writeTableData(self,matMetallicTable,OutputFile)
                 OutputFile.write('# END')
                 
-            UIFunctions.messageUser('Filed Saved!')
+            UIFunctions.messageUser(self,'Filed Saved!')
             
             
     ## Function to write values from QtableWidget to Output Save File   
