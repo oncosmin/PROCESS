@@ -3,4 +3,6 @@ PROCESS is a Post-Processing Tool for Structural Analysis Results obtained with 
 
 This is a new version of the NASTRAN-Composite-Processing tool but with improve GUI and faster algorithms for data processing and calculations.
 
+Run Main.py
+
 __ WORK IN PROGRESS __
