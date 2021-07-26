@@ -2091,7 +2091,7 @@ class Ui_MainWindow(object):
         self.Run_Process_Analysis_Label.setText(QCoreApplication.translate("MainWindow", u"Run Post-Processing Analysis", None))
         self.Run_Analysis_Btn.setText(QCoreApplication.translate("MainWindow", u"RUN", None))
         self.Output_Window_Label.setText(QCoreApplication.translate("MainWindow", u"Output Window", None))
-        self.Developed_Label.setText(QCoreApplication.translate("MainWindow", u"Developed by", None))
+        self.Developed_Label.setText(QCoreApplication.translate("MainWindow", u"Developed by Ionut-Cosmin Oncescu", None))
         self.Version_Label.setText(QCoreApplication.translate("MainWindow", u"v1.0.0  ", None))
     # retranslateUi
 
